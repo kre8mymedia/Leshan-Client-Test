@@ -23,15 +23,15 @@ import org.eclipse.leshan.core.response.WriteResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MyDevice extends BaseInstanceEnabler {
+public class RyanDevice extends BaseInstanceEnabler {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MyDevice.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RyanDevice.class);
 
     private static final Random RANDOM = new Random();
     private static final List<Integer> supportedResources = Arrays.asList(0, 1, 2, 3, 9, 10, 11, 13, 14, 15, 16, 17, 18,
             19, 20, 21);
 
-    public MyDevice() {
+    public RyanDevice() {
         // notify new date each 5 second
         Timer timer = new Timer("Device-Current Time");
         timer.schedule(new TimerTask() {
@@ -111,9 +111,9 @@ public class MyDevice extends BaseInstanceEnabler {
             return super.write(identity, resourceid, value);
         }
     }
-
-    private String getManufacturer(ServerIdentity identity) {
-        return ServerIdentity identity;
+    
+    private String getManufacturer() {
+	return "RYAN SERVER";
     }
 
     private String getModelNumber() {
